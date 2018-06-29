@@ -13,7 +13,7 @@ namespace CapaLogica
     public class LibroStruct
     {
         //Metodo para llamar a la funcion Insertar que esta en la capa de datos
-        public static string Insertar(string clavel, string titulo, string autor, string pasillo, string idgen, int añop)
+        public static string Insertar(string clavel, string titulo, string autor, string pasillo, string idgen, string añop)
         {
             LibroData LD = new LibroData();
             LD.ClaveLibro = clavel;
@@ -28,7 +28,7 @@ namespace CapaLogica
 
         //Metodo para llamar a la funcion Editar que esta en la capa de datos
 
-        public static string Editar(string clavel, string titulo, string autor, string pasillo, string idgen, int añop)
+        public static string Editar(string clavel, string titulo, string autor, string pasillo, string idgen, string añop)
         {
             LibroData LD = new LibroData();
             LD.ClaveLibro = clavel;

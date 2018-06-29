@@ -35,8 +35,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panelEjemplares = new System.Windows.Forms.Panel();
-            this.panelPrestamos = new System.Windows.Forms.Panel();
-            this.panelUsuario = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,11 +48,13 @@
             this.cancelarlibro = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.claveltxt = new System.Windows.Forms.TextBox();
             this.autxt = new System.Windows.Forms.TextBox();
             this.cbgen = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.claveltxt = new System.Windows.Forms.TextBox();
+            this.altlibtxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -87,6 +87,7 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -177,8 +178,6 @@
             // 
             // panelEjemplares
             // 
-            this.panelEjemplares.Controls.Add(this.panelPrestamos);
-            this.panelEjemplares.Controls.Add(this.panelUsuario);
             this.panelEjemplares.Controls.Add(this.tabControl1);
             this.panelEjemplares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEjemplares.Location = new System.Drawing.Point(0, 72);
@@ -186,20 +185,6 @@
             this.panelEjemplares.Size = new System.Drawing.Size(803, 387);
             this.panelEjemplares.TabIndex = 5;
             this.panelEjemplares.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEjemplares_Paint);
-            // 
-            // panelPrestamos
-            // 
-            this.panelPrestamos.Location = new System.Drawing.Point(711, 101);
-            this.panelPrestamos.Name = "panelPrestamos";
-            this.panelPrestamos.Size = new System.Drawing.Size(200, 100);
-            this.panelPrestamos.TabIndex = 6;
-            // 
-            // panelUsuario
-            // 
-            this.panelUsuario.Location = new System.Drawing.Point(711, 243);
-            this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(200, 100);
-            this.panelUsuario.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -242,6 +227,7 @@
             // 
             this.listadolibros.AllowUserToAddRows = false;
             this.listadolibros.AllowUserToDeleteRows = false;
+            this.listadolibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadolibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadolibros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listadolibros.Location = new System.Drawing.Point(3, 142);
@@ -250,6 +236,7 @@
             this.listadolibros.ReadOnly = true;
             this.listadolibros.Size = new System.Drawing.Size(783, 156);
             this.listadolibros.TabIndex = 0;
+            this.listadolibros.DoubleClick += new System.EventHandler(this.listadolibros_DoubleClick);
             // 
             // tableLayoutPanel7
             // 
@@ -267,7 +254,6 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(783, 133);
             this.tableLayoutPanel7.TabIndex = 1;
-            this.tableLayoutPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel7_Paint);
             // 
             // tableLayoutPanel8
             // 
@@ -300,6 +286,7 @@
             this.nuevolibro.TabIndex = 0;
             this.nuevolibro.Text = "Nuevo";
             this.nuevolibro.UseVisualStyleBackColor = true;
+            this.nuevolibro.Click += new System.EventHandler(this.nuevolibro_Click);
             // 
             // editarlibro
             // 
@@ -311,6 +298,7 @@
             this.editarlibro.TabIndex = 1;
             this.editarlibro.Text = "Editar";
             this.editarlibro.UseVisualStyleBackColor = true;
+            this.editarlibro.Click += new System.EventHandler(this.editarlibro_Click);
             // 
             // eliminarlibro
             // 
@@ -322,6 +310,7 @@
             this.eliminarlibro.TabIndex = 2;
             this.eliminarlibro.Text = "Eliminar";
             this.eliminarlibro.UseVisualStyleBackColor = true;
+            this.eliminarlibro.Click += new System.EventHandler(this.eliminarlibro_Click);
             // 
             // guardarlibro
             // 
@@ -345,6 +334,7 @@
             this.cancelarlibro.TabIndex = 4;
             this.cancelarlibro.Text = "Cancelar";
             this.cancelarlibro.UseVisualStyleBackColor = true;
+            this.cancelarlibro.Click += new System.EventHandler(this.cancelarlibro_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -352,11 +342,11 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel9.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.claveltxt, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.autxt, 1, 1);
             this.tableLayoutPanel9.Controls.Add(this.cbgen, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel11, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -377,16 +367,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Clave Libro";
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(71, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Autor";
-            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -396,15 +376,6 @@
             this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "Genero";
-            // 
-            // claveltxt
-            // 
-            this.claveltxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.claveltxt.Location = new System.Drawing.Point(125, 8);
-            this.claveltxt.Name = "claveltxt";
-            this.claveltxt.ReadOnly = true;
-            this.claveltxt.Size = new System.Drawing.Size(142, 26);
-            this.claveltxt.TabIndex = 3;
             // 
             // autxt
             // 
@@ -424,6 +395,52 @@
             this.cbgen.Name = "cbgen";
             this.cbgen.Size = new System.Drawing.Size(121, 28);
             this.cbgen.TabIndex = 5;
+            this.cbgen.SelectedValueChanged += new System.EventHandler(this.cbgen_SelectedValueChanged);
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.claveltxt, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.altlibtxt, 1, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(125, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(179, 36);
+            this.tableLayoutPanel11.TabIndex = 6;
+            // 
+            // claveltxt
+            // 
+            this.claveltxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.claveltxt.Location = new System.Drawing.Point(3, 5);
+            this.claveltxt.Name = "claveltxt";
+            this.claveltxt.ReadOnly = true;
+            this.claveltxt.Size = new System.Drawing.Size(83, 26);
+            this.claveltxt.TabIndex = 3;
+            // 
+            // altlibtxt
+            // 
+            this.altlibtxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.altlibtxt.Location = new System.Drawing.Point(92, 5);
+            this.altlibtxt.Name = "altlibtxt";
+            this.altlibtxt.ReadOnly = true;
+            this.altlibtxt.Size = new System.Drawing.Size(83, 26);
+            this.altlibtxt.TabIndex = 4;
+            this.altlibtxt.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(71, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Autor";
             // 
             // tableLayoutPanel10
             // 
@@ -490,9 +507,11 @@
             // 
             this.pasillotxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pasillotxt.Location = new System.Drawing.Point(125, 50);
+            this.pasillotxt.MaxLength = 2;
             this.pasillotxt.Name = "pasillotxt";
             this.pasillotxt.Size = new System.Drawing.Size(100, 26);
             this.pasillotxt.TabIndex = 4;
+            this.pasillotxt.TextChanged += new System.EventHandler(this.pasillotxt_TextChanged);
             // 
             // añotxt
             // 
@@ -526,6 +545,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(795, 354);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -665,6 +685,7 @@
             // 
             this.idgenerotxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.idgenerotxt.Location = new System.Drawing.Point(178, 19);
+            this.idgenerotxt.MaxLength = 2;
             this.idgenerotxt.Name = "idgenerotxt";
             this.idgenerotxt.ReadOnly = true;
             this.idgenerotxt.Size = new System.Drawing.Size(115, 26);
@@ -720,6 +741,8 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -741,8 +764,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelEjemplares;
-        private System.Windows.Forms.Panel panelUsuario;
-        private System.Windows.Forms.Panel panelPrestamos;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage5;
@@ -759,7 +780,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox idgenerotxt;
         private System.Windows.Forms.TextBox descripciongentxt;
-        private System.Windows.Forms.DataGridView listadogeneros;
         private System.Windows.Forms.Button guardarbtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.DataGridView listadolibros;
@@ -772,7 +792,6 @@
         private System.Windows.Forms.Button cancelarlibro;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox claveltxt;
         private System.Windows.Forms.TextBox autxt;
@@ -784,6 +803,10 @@
         private System.Windows.Forms.TextBox titxt;
         private System.Windows.Forms.TextBox pasillotxt;
         private System.Windows.Forms.TextBox añotxt;
+        private System.Windows.Forms.DataGridView listadogeneros;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.TextBox altlibtxt;
+        private System.Windows.Forms.Label label4;
     }
 }
 

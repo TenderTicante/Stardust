@@ -44,6 +44,7 @@
     <Compile Include="GeneroStruct.cs" />
     <Compile Include="LibroStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioStruct.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CapaDatos\CapaDatos.csproj">
