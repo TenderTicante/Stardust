@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.prestamodetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.nombretxt = new System.Windows.Forms.TextBox();
+            this.titulolibro = new System.Windows.Forms.TextBox();
+            this.folioscb = new System.Windows.Forms.ComboBox();
+            this.comboLibros = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.crearbtn = new System.Windows.Forms.Button();
+            this.agregarbtn = new System.Windows.Forms.Button();
+            this.guardarbtn = new System.Windows.Forms.Button();
+            this.cancelarbtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamodetalle)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -56,7 +57,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.prestamodetalle, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -67,18 +68,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 469);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // prestamodetalle
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 190);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(794, 229);
-            this.dataGridView1.TabIndex = 0;
+            this.prestamodetalle.AllowUserToAddRows = false;
+            this.prestamodetalle.AllowUserToDeleteRows = false;
+            this.prestamodetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prestamodetalle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prestamodetalle.Location = new System.Drawing.Point(3, 190);
+            this.prestamodetalle.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
+            this.prestamodetalle.Name = "prestamodetalle";
+            this.prestamodetalle.ReadOnly = true;
+            this.prestamodetalle.Size = new System.Drawing.Size(794, 229);
+            this.prestamodetalle.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -106,10 +107,10 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox4, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.nombretxt, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.titulolibro, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.folioscb, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboLibros, 1, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -158,90 +159,108 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Titulo Libro";
             // 
-            // textBox1
+            // nombretxt
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Location = new System.Drawing.Point(150, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 4;
+            this.nombretxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nombretxt.Location = new System.Drawing.Point(444, 33);
+            this.nombretxt.Name = "nombretxt";
+            this.nombretxt.ReadOnly = true;
+            this.nombretxt.Size = new System.Drawing.Size(142, 20);
+            this.nombretxt.TabIndex = 6;
             // 
-            // textBox2
+            // titulolibro
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.Location = new System.Drawing.Point(150, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 5;
+            this.titulolibro.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.titulolibro.Location = new System.Drawing.Point(444, 121);
+            this.titulolibro.Name = "titulolibro";
+            this.titulolibro.ReadOnly = true;
+            this.titulolibro.Size = new System.Drawing.Size(142, 20);
+            this.titulolibro.TabIndex = 7;
             // 
-            // textBox3
+            // folioscb
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox3.Location = new System.Drawing.Point(444, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(142, 20);
-            this.textBox3.TabIndex = 6;
+            this.folioscb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.folioscb.FormattingEnabled = true;
+            this.folioscb.Location = new System.Drawing.Point(150, 33);
+            this.folioscb.Name = "folioscb";
+            this.folioscb.Size = new System.Drawing.Size(141, 21);
+            this.folioscb.TabIndex = 8;
+            this.folioscb.SelectedIndexChanged += new System.EventHandler(this.folioscb_SelectedIndexChanged);
+            this.folioscb.TextChanged += new System.EventHandler(this.folioscb_TextChanged);
             // 
-            // textBox4
+            // comboLibros
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox4.Location = new System.Drawing.Point(444, 121);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(142, 20);
-            this.textBox4.TabIndex = 7;
+            this.comboLibros.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboLibros.FormattingEnabled = true;
+            this.comboLibros.Location = new System.Drawing.Point(150, 120);
+            this.comboLibros.Name = "comboLibros";
+            this.comboLibros.Size = new System.Drawing.Size(141, 21);
+            this.comboLibros.TabIndex = 9;
+            this.comboLibros.SelectedIndexChanged += new System.EventHandler(this.comboLibros_SelectedIndexChanged);
+            this.comboLibros.TextChanged += new System.EventHandler(this.comboLibros_TextChanged);
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button2, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.button3, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.cancelarbtn, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.crearbtn, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.agregarbtn, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.guardarbtn, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(598, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(193, 175);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // button1
+            // crearbtn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button1.Location = new System.Drawing.Point(46, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar Libro";
-            this.button1.UseVisualStyleBackColor = true;
+            this.crearbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.crearbtn.Location = new System.Drawing.Point(41, 10);
+            this.crearbtn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.crearbtn.Name = "crearbtn";
+            this.crearbtn.Size = new System.Drawing.Size(110, 23);
+            this.crearbtn.TabIndex = 0;
+            this.crearbtn.Text = "Crear Prestamo";
+            this.crearbtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // agregarbtn
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button2.Location = new System.Drawing.Point(46, 68);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Crear Prestamo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.agregarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.agregarbtn.Location = new System.Drawing.Point(41, 53);
+            this.agregarbtn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.agregarbtn.Name = "agregarbtn";
+            this.agregarbtn.Size = new System.Drawing.Size(110, 23);
+            this.agregarbtn.TabIndex = 1;
+            this.agregarbtn.Text = "Agregar Libro";
+            this.agregarbtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // guardarbtn
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button3.Location = new System.Drawing.Point(46, 126);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 39);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cancelar Prestamo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.guardarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.guardarbtn.Location = new System.Drawing.Point(41, 96);
+            this.guardarbtn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.guardarbtn.Name = "guardarbtn";
+            this.guardarbtn.Size = new System.Drawing.Size(110, 23);
+            this.guardarbtn.TabIndex = 2;
+            this.guardarbtn.Text = "Guardar Prestamo";
+            this.guardarbtn.UseVisualStyleBackColor = true;
+            // 
+            // cancelarbtn
+            // 
+            this.cancelarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cancelarbtn.Location = new System.Drawing.Point(41, 139);
+            this.cancelarbtn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.cancelarbtn.Name = "cancelarbtn";
+            this.cancelarbtn.Size = new System.Drawing.Size(110, 26);
+            this.cancelarbtn.TabIndex = 3;
+            this.cancelarbtn.Text = "Cancelar Prestamo";
+            this.cancelarbtn.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
@@ -253,8 +272,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Prestamo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamodetalle)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -266,20 +286,21 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView prestamodetalle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox nombretxt;
+        private System.Windows.Forms.TextBox titulolibro;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button crearbtn;
+        private System.Windows.Forms.Button agregarbtn;
+        private System.Windows.Forms.Button guardarbtn;
+        private System.Windows.Forms.ComboBox folioscb;
+        private System.Windows.Forms.ComboBox comboLibros;
+        private System.Windows.Forms.Button cancelarbtn;
     }
 }

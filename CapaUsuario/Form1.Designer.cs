@@ -392,7 +392,7 @@
             this.cbgen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbgen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbgen.FormattingEnabled = true;
-            this.cbgen.Location = new System.Drawing.Point(125, 91);
+            this.cbgen.Location = new System.Drawing.Point(125, 95);
             this.cbgen.Name = "cbgen";
             this.cbgen.Size = new System.Drawing.Size(121, 28);
             this.cbgen.TabIndex = 5;

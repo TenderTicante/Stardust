@@ -60,5 +60,13 @@ namespace CapaLogica
 
             return UD.Numeracion(año);
         }
+
+        public static string Datos(string folio)
+        {
+            UsuarioData UD = new UsuarioData();
+            UD.Aux = folio;
+
+            return UD.Datos(folio);
+        }
     }
 }

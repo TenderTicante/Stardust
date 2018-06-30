@@ -74,5 +74,13 @@ namespace CapaLogica
 
             return LD.RepeticionPasillos(pasillos);
         }
+
+        public static string Titulos(string clavelibro)
+        {
+            LibroData LD = new LibroData();
+            LD.Pasillo = clavelibro;
+
+            return LD.TituloLibros(clavelibro);
+        }
     }
 }
