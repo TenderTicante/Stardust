@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="GeneroStruct.cs" />
     <Compile Include="LibroStruct.cs" />
+    <Compile Include="PrestamoStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioStruct.cs" />
   </ItemGroup>

@@ -53,10 +53,10 @@ namespace CapaLogica
             return new UsuarioData().Mostrar();
         }
 
-        public static string Secuencia(DateTime año)
+        public static string Secuencia(string año)
         {
             UsuarioData UD = new UsuarioData();
-            UD.FechaRegistro = año;
+            UD.Aux = año;
 
             return UD.Numeracion(año);
         }

@@ -40,6 +40,15 @@ namespace CapaUsuario
         private void button3_Click(object sender, EventArgs e)
         {
             panelEjemplares.Visible = false;
+            Form3 Prestamo = new Form3();
+            Prestamo.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            panelEjemplares.Visible = false;
+            Form4 Devolucion = new Form4();
+            Devolucion.ShowDialog();
         }
 
         //Banderas para saber si es insercion o edicion
@@ -508,6 +517,5 @@ namespace CapaUsuario
             aux2 = cbgen.Text;
             claveltxt.Text = aux2 + aux + Secuencia();
         }
-    
     }
 }

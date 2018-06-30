@@ -39,19 +39,19 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.idgenerotxt = new System.Windows.Forms.TextBox();
-            this.descripciongentxt = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nombreutxt = new System.Windows.Forms.TextBox();
+            this.fechareg = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.folioutxt = new System.Windows.Forms.TextBox();
+            this.folioauxtxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.listadousuarios = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadousuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -60,7 +60,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.listadousuarios, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -116,6 +116,7 @@
             this.nuevobtn.TabIndex = 0;
             this.nuevobtn.Text = "Nuevo";
             this.nuevobtn.UseVisualStyleBackColor = true;
+            this.nuevobtn.Click += new System.EventHandler(this.nuevobtn_Click);
             // 
             // editarbtn
             // 
@@ -127,6 +128,7 @@
             this.editarbtn.TabIndex = 1;
             this.editarbtn.Text = "Editar";
             this.editarbtn.UseVisualStyleBackColor = true;
+            this.editarbtn.Click += new System.EventHandler(this.editarbtn_Click);
             // 
             // eliminarbtn
             // 
@@ -138,6 +140,7 @@
             this.eliminarbtn.TabIndex = 2;
             this.eliminarbtn.Text = "Eliminar";
             this.eliminarbtn.UseVisualStyleBackColor = true;
+            this.eliminarbtn.Click += new System.EventHandler(this.eliminarbtn_Click);
             // 
             // guardarbtn
             // 
@@ -149,6 +152,7 @@
             this.guardarbtn.TabIndex = 4;
             this.guardarbtn.Text = "Guardar";
             this.guardarbtn.UseVisualStyleBackColor = true;
+            this.guardarbtn.Click += new System.EventHandler(this.guardarbtn_Click);
             // 
             // cancelarbtn
             // 
@@ -160,6 +164,7 @@
             this.cancelarbtn.TabIndex = 3;
             this.cancelarbtn.Text = "Cancelar";
             this.cancelarbtn.UseVisualStyleBackColor = true;
+            this.cancelarbtn.Click += new System.EventHandler(this.cancelarbtn_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -168,8 +173,8 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.descripciongentxt, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.nombreutxt, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.fechareg, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -203,54 +208,30 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre Usuario";
             // 
-            // idgenerotxt
+            // nombreutxt
             // 
-            this.idgenerotxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.idgenerotxt.Location = new System.Drawing.Point(3, 14);
-            this.idgenerotxt.MaxLength = 2;
-            this.idgenerotxt.Name = "idgenerotxt";
-            this.idgenerotxt.ReadOnly = true;
-            this.idgenerotxt.Size = new System.Drawing.Size(169, 20);
-            this.idgenerotxt.TabIndex = 2;
+            this.nombreutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nombreutxt.Location = new System.Drawing.Point(156, 71);
+            this.nombreutxt.Name = "nombreutxt";
+            this.nombreutxt.Size = new System.Drawing.Size(351, 20);
+            this.nombreutxt.TabIndex = 3;
             // 
-            // descripciongentxt
+            // fechareg
             // 
-            this.descripciongentxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.descripciongentxt.Location = new System.Drawing.Point(156, 71);
-            this.descripciongentxt.Name = "descripciongentxt";
-            this.descripciongentxt.Size = new System.Drawing.Size(351, 20);
-            this.descripciongentxt.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(156, 125);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 178);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(688, 211);
-            this.dataGridView1.TabIndex = 0;
+            this.fechareg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.fechareg.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechareg.Location = new System.Drawing.Point(156, 125);
+            this.fechareg.Name = "fechareg";
+            this.fechareg.Size = new System.Drawing.Size(200, 20);
+            this.fechareg.TabIndex = 6;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.idgenerotxt, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.folioutxt, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.folioauxtxt, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(156, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -259,25 +240,49 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(351, 48);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // textBox1
+            // folioutxt
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Location = new System.Drawing.Point(178, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Visible = false;
+            this.folioutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.folioutxt.Location = new System.Drawing.Point(3, 14);
+            this.folioutxt.MaxLength = 2;
+            this.folioutxt.Name = "folioutxt";
+            this.folioutxt.ReadOnly = true;
+            this.folioutxt.Size = new System.Drawing.Size(169, 20);
+            this.folioutxt.TabIndex = 2;
+            // 
+            // folioauxtxt
+            // 
+            this.folioauxtxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.folioauxtxt.Location = new System.Drawing.Point(178, 14);
+            this.folioauxtxt.Name = "folioauxtxt";
+            this.folioauxtxt.ReadOnly = true;
+            this.folioauxtxt.Size = new System.Drawing.Size(170, 20);
+            this.folioauxtxt.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 129);
+            this.label3.Location = new System.Drawing.Point(71, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "FechaReg";
+            this.label3.Text = "Fecha Registro";
+            // 
+            // listadousuarios
+            // 
+            this.listadousuarios.AllowUserToAddRows = false;
+            this.listadousuarios.AllowUserToDeleteRows = false;
+            this.listadousuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadousuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadousuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listadousuarios.Location = new System.Drawing.Point(3, 178);
+            this.listadousuarios.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
+            this.listadousuarios.Name = "listadousuarios";
+            this.listadousuarios.ReadOnly = true;
+            this.listadousuarios.Size = new System.Drawing.Size(688, 211);
+            this.listadousuarios.TabIndex = 0;
+            this.listadousuarios.DoubleClick += new System.EventHandler(this.listadousuarios_DoubleClick);
             // 
             // Form2
             // 
@@ -289,14 +294,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Usuarios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadousuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,7 +310,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listadousuarios;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button nuevobtn;
@@ -314,12 +320,12 @@
         private System.Windows.Forms.Button guardarbtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox idgenerotxt;
-        private System.Windows.Forms.TextBox descripciongentxt;
+        private System.Windows.Forms.TextBox folioutxt;
+        private System.Windows.Forms.TextBox nombreutxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fechareg;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox folioauxtxt;
         private System.Windows.Forms.Label label3;
     }
 }
