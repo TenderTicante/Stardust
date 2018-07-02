@@ -17,6 +17,7 @@ namespace CapaUsuario
     {
         private bool IsNuevo;
         private DataTable datadetalle;
+        string usuario;
 
         public Form3()
         {
@@ -66,6 +67,7 @@ namespace CapaUsuario
             string result;
             result=UsuarioStruct.Datos(folioscb.Text);
             nombretxt.Text = result;
+            UsuarioRepetido();
         }
 
         private void folioscb_TextChanged(object sender, EventArgs e)
@@ -76,6 +78,7 @@ namespace CapaUsuario
             string result;
             result = UsuarioStruct.Datos(folioscb.Text);
             nombretxt.Text = result;
+            UsuarioRepetido();
         }
 
         private void comboLibros_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,15 +105,9 @@ namespace CapaUsuario
         private string UsuarioRepetido()
         {
 
-            string folio = PrestamoStruct.RepeticionUsuarios(folioscb.Text);
-
-            if (folio != "")
-
-                folio = "El usuario ya cuenta con expediente activo";
-
-            else
-                folio = "";
-            return folio;
+            usuario = PrestamoStruct.RepeticionUsuarios(folioscb.Text);
+            folioaux.Text = usuario;
+            return usuario;
         }
 
         private void Limpiar()
@@ -169,6 +166,7 @@ namespace CapaUsuario
             llenarCombo();
             llenarCombo2();
             Secuencia();
+            UsuarioRepetido();
         }
 
         private void cancelarbtn_Click(object sender, EventArgs e)
@@ -212,12 +210,23 @@ namespace CapaUsuario
                     }
                     if (registrar)
                     {
-                        //Agregar detalle al listado
-                        DataRow row = this.datadetalle.NewRow();
-                        row["idPrestamo"] = Convert.ToString(this.secuenciatxt.Text);
-                        row["claveLibro"] = Convert.ToString(this.comboLibros.Text);
-                        row["titulo"] = Convert.ToString(this.titulolibro.Text);
-                        this.datadetalle.Rows.Add(row);
+                        if (folioaux.Text != string.Empty)
+                        {
+                            DataRow raw = this.datadetalle.NewRow();
+                            raw["idPrestamo"] = Convert.ToString(this.folioaux.Text);
+                            raw["claveLibro"] = Convert.ToString(this.comboLibros.Text);
+                            raw["titulo"] = Convert.ToString(this.titulolibro.Text);
+                            this.datadetalle.Rows.Add(raw);
+                        }
+                        else
+                        {
+                            //Agregar detalle al listado
+                            DataRow row = this.datadetalle.NewRow();
+                            row["idPrestamo"] = Convert.ToString(this.secuenciatxt.Text);
+                            row["claveLibro"] = Convert.ToString(this.comboLibros.Text);
+                            row["titulo"] = Convert.ToString(this.titulolibro.Text);
+                            this.datadetalle.Rows.Add(row);
+                        }
                     }
                 }
             }
@@ -231,9 +240,8 @@ namespace CapaUsuario
         {
             try
             {
-                string respuesta = "", usuario="",respuestadetalle="";
-                usuario = UsuarioRepetido();
-                if (this.titulolibro.Text == string.Empty || this.nombretxt.Text == string.Empty || usuario != string.Empty)
+                string respuesta = "",respuestadetalle="";
+                if (this.titulolibro.Text == string.Empty || this.nombretxt.Text == string.Empty)
                 {
                     MensajeError("Datos ingresados erroneamente, favor de revisar");
                     if (this.titulolibro.Text == string.Empty)
@@ -244,18 +252,21 @@ namespace CapaUsuario
                     {
                         MessageBox.Show("Usuario no identificado");
                     }
-
-                    if (usuario != string.Empty)
-                    {
-                        MessageBox.Show("El Usuario ya cuenta con expediente activo");
-                    }
                 }
                 else
                 {
                     if (this.IsNuevo)
                     {
-                        respuesta = PrestamoStruct.Insertar(Convert.ToInt32(secuenciatxt.Text),folioscb.Text);
-                        respuestadetalle = DetallePrestamoStruct.Insertar(datadetalle);
+                        if (folioaux.Text != string.Empty)
+                        {
+                            respuesta = PrestamoStruct.Insertar(Convert.ToInt32(folioaux.Text), folioscb.Text);
+                            respuestadetalle = DetallePrestamoStruct.Insertar(datadetalle);
+                        }
+                        else
+                        {
+                            respuesta = PrestamoStruct.Insertar(Convert.ToInt32(secuenciatxt.Text), folioscb.Text);
+                            respuestadetalle = DetallePrestamoStruct.Insertar(datadetalle);
+                        }
                     }
 
                     if (respuesta.Equals("KK")&&respuestadetalle.Equals("OK"))

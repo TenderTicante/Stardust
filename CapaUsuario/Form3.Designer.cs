@@ -47,6 +47,7 @@
             this.crearbtn = new System.Windows.Forms.Button();
             this.agregarbtn = new System.Windows.Forms.Button();
             this.guardarbtn = new System.Windows.Forms.Button();
+            this.folioaux = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamodetalle)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -116,6 +117,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.secuenciatxt, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.folioaux, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -292,6 +294,14 @@
             this.guardarbtn.UseVisualStyleBackColor = true;
             this.guardarbtn.Click += new System.EventHandler(this.guardarbtn_Click);
             // 
+            // folioaux
+            // 
+            this.folioaux.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.folioaux.Location = new System.Drawing.Point(297, 19);
+            this.folioaux.Name = "folioaux";
+            this.folioaux.Size = new System.Drawing.Size(141, 20);
+            this.folioaux.TabIndex = 12;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +344,6 @@
         private System.Windows.Forms.Button cancelarbtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox secuenciatxt;
+        private System.Windows.Forms.TextBox folioaux;
     }
 }
