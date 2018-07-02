@@ -32,19 +32,21 @@
             this.prestamodetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.nombretxt = new System.Windows.Forms.TextBox();
             this.titulolibro = new System.Windows.Forms.TextBox();
-            this.folioscb = new System.Windows.Forms.ComboBox();
+            this.nombretxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboLibros = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.folioscb = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.secuenciatxt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.cancelarbtn = new System.Windows.Forms.Button();
             this.crearbtn = new System.Windows.Forms.Button();
             this.agregarbtn = new System.Windows.Forms.Button();
             this.guardarbtn = new System.Windows.Forms.Button();
-            this.cancelarbtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamodetalle)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,6 +74,7 @@
             // 
             this.prestamodetalle.AllowUserToAddRows = false;
             this.prestamodetalle.AllowUserToDeleteRows = false;
+            this.prestamodetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.prestamodetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prestamodetalle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.prestamodetalle.Location = new System.Drawing.Point(3, 190);
@@ -103,101 +106,124 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.nombretxt, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.titulolibro, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.folioscb, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboLibros, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.titulolibro, 3, 2);
+            this.tableLayoutPanel3.Controls.Add(this.nombretxt, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.comboLibros, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.folioscb, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.secuenciatxt, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(589, 175);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Folio Credencial";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Clave Libro";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(394, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre";
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(379, 124);
+            this.label4.Location = new System.Drawing.Point(379, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Titulo Libro";
             // 
-            // nombretxt
-            // 
-            this.nombretxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nombretxt.Location = new System.Drawing.Point(444, 33);
-            this.nombretxt.Name = "nombretxt";
-            this.nombretxt.ReadOnly = true;
-            this.nombretxt.Size = new System.Drawing.Size(142, 20);
-            this.nombretxt.TabIndex = 6;
-            // 
             // titulolibro
             // 
             this.titulolibro.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.titulolibro.Location = new System.Drawing.Point(444, 121);
+            this.titulolibro.Location = new System.Drawing.Point(444, 135);
             this.titulolibro.Name = "titulolibro";
             this.titulolibro.ReadOnly = true;
             this.titulolibro.Size = new System.Drawing.Size(142, 20);
             this.titulolibro.TabIndex = 7;
             // 
+            // nombretxt
+            // 
+            this.nombretxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nombretxt.Location = new System.Drawing.Point(444, 77);
+            this.nombretxt.Name = "nombretxt";
+            this.nombretxt.ReadOnly = true;
+            this.nombretxt.Size = new System.Drawing.Size(142, 20);
+            this.nombretxt.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(394, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre";
+            // 
+            // comboLibros
+            // 
+            this.comboLibros.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboLibros.FormattingEnabled = true;
+            this.comboLibros.Location = new System.Drawing.Point(150, 135);
+            this.comboLibros.Name = "comboLibros";
+            this.comboLibros.Size = new System.Drawing.Size(141, 21);
+            this.comboLibros.TabIndex = 9;
+            this.comboLibros.SelectedIndexChanged += new System.EventHandler(this.comboLibros_SelectedIndexChanged);
+            this.comboLibros.TextChanged += new System.EventHandler(this.comboLibros_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(84, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Clave Libro";
+            // 
             // folioscb
             // 
             this.folioscb.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.folioscb.FormattingEnabled = true;
-            this.folioscb.Location = new System.Drawing.Point(150, 33);
+            this.folioscb.Location = new System.Drawing.Point(150, 76);
             this.folioscb.Name = "folioscb";
             this.folioscb.Size = new System.Drawing.Size(141, 21);
             this.folioscb.TabIndex = 8;
             this.folioscb.SelectedIndexChanged += new System.EventHandler(this.folioscb_SelectedIndexChanged);
             this.folioscb.TextChanged += new System.EventHandler(this.folioscb_TextChanged);
             // 
-            // comboLibros
+            // label1
             // 
-            this.comboLibros.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboLibros.FormattingEnabled = true;
-            this.comboLibros.Location = new System.Drawing.Point(150, 120);
-            this.comboLibros.Name = "comboLibros";
-            this.comboLibros.Size = new System.Drawing.Size(141, 21);
-            this.comboLibros.TabIndex = 9;
-            this.comboLibros.SelectedIndexChanged += new System.EventHandler(this.comboLibros_SelectedIndexChanged);
-            this.comboLibros.TextChanged += new System.EventHandler(this.comboLibros_TextChanged);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(62, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Folio Credencial";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(48, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Clave de Prestamo";
+            // 
+            // secuenciatxt
+            // 
+            this.secuenciatxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.secuenciatxt.Location = new System.Drawing.Point(150, 19);
+            this.secuenciatxt.Name = "secuenciatxt";
+            this.secuenciatxt.ReadOnly = true;
+            this.secuenciatxt.Size = new System.Drawing.Size(141, 20);
+            this.secuenciatxt.TabIndex = 11;
             // 
             // tableLayoutPanel4
             // 
@@ -218,6 +244,18 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(193, 175);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
+            // cancelarbtn
+            // 
+            this.cancelarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cancelarbtn.Location = new System.Drawing.Point(41, 139);
+            this.cancelarbtn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.cancelarbtn.Name = "cancelarbtn";
+            this.cancelarbtn.Size = new System.Drawing.Size(110, 26);
+            this.cancelarbtn.TabIndex = 3;
+            this.cancelarbtn.Text = "Cancelar Prestamo";
+            this.cancelarbtn.UseVisualStyleBackColor = true;
+            this.cancelarbtn.Click += new System.EventHandler(this.cancelarbtn_Click);
+            // 
             // crearbtn
             // 
             this.crearbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -228,6 +266,7 @@
             this.crearbtn.TabIndex = 0;
             this.crearbtn.Text = "Crear Prestamo";
             this.crearbtn.UseVisualStyleBackColor = true;
+            this.crearbtn.Click += new System.EventHandler(this.crearbtn_Click);
             // 
             // agregarbtn
             // 
@@ -239,6 +278,7 @@
             this.agregarbtn.TabIndex = 1;
             this.agregarbtn.Text = "Agregar Libro";
             this.agregarbtn.UseVisualStyleBackColor = true;
+            this.agregarbtn.Click += new System.EventHandler(this.agregarbtn_Click);
             // 
             // guardarbtn
             // 
@@ -250,17 +290,7 @@
             this.guardarbtn.TabIndex = 2;
             this.guardarbtn.Text = "Guardar Prestamo";
             this.guardarbtn.UseVisualStyleBackColor = true;
-            // 
-            // cancelarbtn
-            // 
-            this.cancelarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cancelarbtn.Location = new System.Drawing.Point(41, 139);
-            this.cancelarbtn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.cancelarbtn.Name = "cancelarbtn";
-            this.cancelarbtn.Size = new System.Drawing.Size(110, 26);
-            this.cancelarbtn.TabIndex = 3;
-            this.cancelarbtn.Text = "Cancelar Prestamo";
-            this.cancelarbtn.UseVisualStyleBackColor = true;
+            this.guardarbtn.Click += new System.EventHandler(this.guardarbtn_Click);
             // 
             // Form3
             // 
@@ -302,5 +332,7 @@
         private System.Windows.Forms.ComboBox folioscb;
         private System.Windows.Forms.ComboBox comboLibros;
         private System.Windows.Forms.Button cancelarbtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox secuenciatxt;
     }
 }

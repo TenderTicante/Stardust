@@ -11,36 +11,29 @@ namespace CapaLogica
 {
     public class PrestamoStruct
     {
-        public static string Insertar(string folioCred, DataTable dtDetalle)
+        public static int Secuencia()
         {
-            PrestamoData Prestamo = new PrestamoData();
-            Prestamo.FolioCred = folioCred;
-            List<DetallePrestamo> detalle = new List<DetallePrestamo>();
+            PrestamoData PD = new PrestamoData();
 
-            foreach (DataRow raw in dtDetalle.Rows)
-            {
-                DetallePrestamo detail = new DetallePrestamo();
-                detail.IdPrestamo = Convert.ToInt32(raw["idPrestamo"].ToString());
-                detail.ClaveLibro = Convert.ToString(raw["claveLibro"].ToString());
-                detalle.Add(detail);
-            }
-            return Prestamo.Insertar(Prestamo, detalle);
+            return PD.Numeracion();
         }
 
-        //Metodo para Eliminar detalle del prestamo
-        public static string Eliminar(int idprestamo,string clavel)
+        public static string RepeticionUsuarios(string folio)
         {
-            DetallePrestamo Detalle = new DetallePrestamo();
-            Detalle.IdPrestamo = idprestamo;
-            Detalle.ClaveLibro = clavel;
-            return Detalle.Eliminar(Detalle);
+            PrestamoData PD = new PrestamoData();
+            PD.FolioCred = folio;
+
+            return PD.BusquedaUsuario(folio);
         }
 
-        public static DataTable MostrarDetalle(int varaux)
+        //Metodo para llamar a la funcion Insertar que esta en la capa de datos
+        public static string Insertar(int idprestamo, string cusuario)
         {
-            PrestamoData Prestamo = new PrestamoData();
-            Prestamo.IdPrestamo = varaux;
-            return Prestamo.MostrarDetalles(varaux);
+            PrestamoData PD = new PrestamoData();
+            PD.IdPrestamo = idprestamo;
+            PD.FolioCred = cusuario;
+
+            return PD.Insertar(PD);
         }
     }
 }
